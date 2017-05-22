@@ -1,0 +1,7 @@
+set architecture i386
+target remote :1234
+file obj/bootblock.o
+break bootmain
+define hook-stop
+x /i $pc
+end
